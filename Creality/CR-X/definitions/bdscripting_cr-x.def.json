@@ -21,15 +21,15 @@
         "variants_name": "Nozzle Size",
         "preferred_variant_name": "0.4mm Nozzle",
         "preferred_quality_type": "standard",
-        "preferred_material": "generic_pla"
+        "preferred_material": "custom_pla"
     },
 
     "overrides":
     {
-        "machine_name": { "default_value": "CRX" },        
-        "machine_show_variants": { "value": true },        
-        "machine_start_gcode": { "value": "Something" },
-        "machine_end_gcode": { "value": "Something" },
+        "machine_name": { "default_value": "CRX" },
+        "machine_show_variants": { "value": true },
+        "machine_start_gcode": { "default_value": "; Begin Start G-code\n; End Start G-code" },
+        "machine_end_gcode": { "default_value": "; Begin End G-code\n; End of End G-code" },
         
         "material_diameter": { "value": 1.75 },
         "machine_heated_bed": { "value": true },
@@ -51,13 +51,13 @@
         "acceleration_enabled": { "value": true },
 
         "machine_max_acceleration_x": { "value": 1500 },
-        "machine_max_acceleration_y": { "value": 1500 },
+        "machine_max_acceleration_y": { "value": 1000 },
         "machine_max_acceleration_z": { "value": 100 },
         "machine_max_acceleration_e": { "value": 5000 },
         
-        "machine_acceleration": { "value": 800 },        
+        "machine_acceleration": { "value": 650 },
         "acceleration_print": { "value": "machine_acceleration" },
-        "acceleration_travel": { "value": "machine_acceleration" },
+        "acceleration_travel": { "value": 1000 },
 
         "jerk_enabled": { "value": true },
         
@@ -65,14 +65,22 @@
         "machine_max_jerk_z": { "value": 0.4 },
         "machine_max_jerk_e": { "value": 5 },
 
-        "jerk_print": { "value": 6 },
+        "jerk_print": { "value": 8 },
         "jerk_travel": { "value": "machine_max_jerk_xy" },
+
+        "line_width":
+        { 
+            "minimum_value_warning": "machine_nozzle_size * 0.5",
+            "maximum_value_warning": "machine_nozzle_tip_outer_diameter + layer_height",
+            "value": "max(machine_nozzle_size * 1.2, (machine_nozzle_tip_outer_diameter + layer_height) * 0.5)"
+        },
         
-        "speed_print": { "value": 60 },
-        "speed_infill": { "value": "speed_print" },
-        "speed_wall": { "value": "round(speed_print * 0.5)" },
-        "speed_wall_x": { "value": "round(speed_wall * 2)" },
-        "speed_topbottom": { "value": "round(speed_print * 0.75)" },        
+        "speed_print": { "value": 50 },
+        "speed_infill": { "value": "round(speed_print * 0.75)" },
+        "speed_wall": { "value": "speed_print" },
+        "speed_wall_0": { "value": "round(speed_print * 0.75)" },
+        "speed_wall_x": { "value": "speed_wall" },
+        "speed_topbottom": { "value": "round(speed_print * 0.75)" },
         "small_feature_speed_factor": { "value": 25 },
         
         "retraction_amount": { "value": 6 },
@@ -95,7 +103,7 @@
         "z_seam_type": { "value": "'sharpest_corner'" },
         "z_seam_corner": { "value": "'z_seam_corner_weighted'" },
         
-        "switch_extruder_retraction_amount": { "value": 0 },        
+        "switch_extruder_retraction_amount": { "value": 0 },
         "relative_extrusion": { "value": true },
         
         "xy_offset_layer_0": { "value": -0.1 },
@@ -107,18 +115,18 @@
         "roofing_pattern": { "value": "'lines'" },
         "roofing_monotonic": { "value": true },
         
-        "skin_line_width": { "value": "line_width * 1.5" },
+        "skin_line_width": { "value": "max(machine_nozzle_size * 1.5, (machine_nozzle_tip_outer_diameter + layer_height) * 0.8)" },
         "skin_overlap": { "value": "15 if top_bottom_pattern != 'concentric' else 0" },
         
         "top_bottom_thickness": {"value":  "layer_height_0 + layer_height * 3" },
         "top_bottom_pattern": { "value": "'zigzag'" },
-        "top_bottom_pattern_0": { "value": "'lines'" },        
+        "top_bottom_pattern_0": { "value": "'lines'" },
 
         "optimize_wall_printing_order": { "value": true },
         
         "infill_pattern": { "value": "'cubicsubdiv' if infill_sparse_density > 50 else 'grid'" },
         "infill_enable_travel_optimization": { "value": true },
-        "infill_line_width": { "value": "line_width * 1.5" },
+        "infill_line_width": { "value": "max(machine_nozzle_size * 1.5, (machine_nozzle_tip_outer_diameter + layer_height) * 0.8)" },
         "infill_wall_line_count": { "value": 1 }
     }
 }
