@@ -71,9 +71,10 @@
         "line_width":
         { 
             "minimum_value_warning": "machine_nozzle_size * 0.5",
-            "maximum_value_warning": "machine_nozzle_tip_outer_diameter + layer_height",
-            "value": "max(machine_nozzle_size * 1.2, (machine_nozzle_tip_outer_diameter + layer_height) * 0.5)"
+            "maximum_value_warning": "min(machine_nozzle_size * 2.25, machine_nozzle_tip_outer_diameter + layer_height)",
+            "value": "(machine_nozzle_size * 1.5) if (machine_nozzle_size * 1.5) < (machine_nozzle_tip_outer_diameter + layer_height) else (machine_nozzle_tip_outer_diameter + layer_height)"
         },
+        "wall_line_width": { "value": "line_width * 0.8" },
         
         "speed_print": { "value": 50 },
         "speed_infill": { "value": "round(speed_print * 0.75)" },
@@ -82,9 +83,11 @@
         "speed_wall_x": { "value": "speed_wall" },
         "speed_topbottom": { "value": "round(speed_print * 0.75)" },
         "small_feature_speed_factor": { "value": 25 },
+        "speed_equalize_flow_width_factor": { "value": 100 },
         
         "retraction_amount": { "value": 6 },
         "retraction_speed": { "value": 50},
+        "retraction_combing": { "value": "'noskin'" },
         "retraction_combing_max_distance": { "value": 20 },
         
         "cool_fan_full_at_height": { "value": "layer_height_0 + (layer_height * 9)" },
@@ -97,25 +100,28 @@
         "adaptive_layer_height_variation": { "value": "layer_height * 0.5" },
         "adaptive_layer_height_variation_step": { "value": 0.04 },
         
-        "material_flow_layer_0": { "value": 95 },
+        "material_flow_layer_0": { "value": 100 },
         "skirt_brim_material_flow": { "value": "material_flow_layer_0" },
         
         "z_seam_type": { "value": "'sharpest_corner'" },
         "z_seam_corner": { "value": "'z_seam_corner_weighted'" },
         
-        "switch_extruder_retraction_amount": { "value": 0 },
+        "switch_extruder_retraction_amount": { "value": 100 },
+        "switch_extruder_retraction_speeds": { "value": 20 },
+
         "relative_extrusion": { "value": true },
         
         "xy_offset_layer_0": { "value": -0.1 },
         
         "roofing_layer_count": { "value": 2 },
-        "roofing_material_flow": { "value": 98 },
+        "roofing_material_flow": { "value": 96 },
         "speed_roofing": { "value": "round(speed_print * 0.5)" },
         "roofing_line_width": { "value": "skin_line_width * 0.5" },
         "roofing_pattern": { "value": "'lines'" },
         "roofing_monotonic": { "value": true },
         
-        "skin_line_width": { "value": "max(machine_nozzle_size * 1.5, (machine_nozzle_tip_outer_diameter + layer_height) * 0.8)" },
+        "skin_line_width": { "value": "line_width" },
+        "skin_outline_count": { "value": 0 },
         "skin_overlap": { "value": "15 if top_bottom_pattern != 'concentric' else 0" },
         
         "top_bottom_thickness": {"value":  "layer_height_0 + layer_height * 3" },
@@ -123,10 +129,11 @@
         "top_bottom_pattern_0": { "value": "'lines'" },
 
         "optimize_wall_printing_order": { "value": true },
+        "inset_direction": { "value": "'inside_out'" },
         
         "infill_pattern": { "value": "'cubicsubdiv' if infill_sparse_density > 50 else 'grid'" },
         "infill_enable_travel_optimization": { "value": true },
-        "infill_line_width": { "value": "max(machine_nozzle_size * 1.5, (machine_nozzle_tip_outer_diameter + layer_height) * 0.8)" },
+        "infill_line_width": { "value": "line_width" },
         "infill_wall_line_count": { "value": 1 }
     }
 }
