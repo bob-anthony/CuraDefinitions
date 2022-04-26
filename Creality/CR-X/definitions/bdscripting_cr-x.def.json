@@ -82,7 +82,7 @@
         "speed_wall_0": { "value": "round(speed_print * 0.75)" },
         "speed_wall_x": { "value": "speed_wall" },
         "speed_topbottom": { "value": "round(speed_print * 0.75)" },
-        "speed_layer_0": { "value": "speed_print * 0.4"}
+        "speed_layer_0": { "value": "speed_print * 0.4"},
         "small_feature_speed_factor": { "value": 25 },
         "speed_equalize_flow_width_factor": { "value": 100 },
         
@@ -115,7 +115,7 @@
         "xy_offset_layer_0": { "value": -0.1 },
         
         "roofing_layer_count": { "value": 2 },
-        "roofing_material_flow": { "value": 96 },
+        "roofing_material_flow": { "value": 98 },
         "speed_roofing": { "value": "round(speed_print * 0.5)" },
         "roofing_line_width": { "value": "skin_line_width * 0.5" },
         "roofing_pattern": { "value": "'lines'" },
