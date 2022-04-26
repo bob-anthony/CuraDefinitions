@@ -82,6 +82,7 @@
         "speed_wall_0": { "value": "round(speed_print * 0.75)" },
         "speed_wall_x": { "value": "speed_wall" },
         "speed_topbottom": { "value": "round(speed_print * 0.75)" },
+        "speed_layer_0": { "value": "speed_print * 0.4"}
         "small_feature_speed_factor": { "value": 25 },
         "speed_equalize_flow_width_factor": { "value": 100 },
         
