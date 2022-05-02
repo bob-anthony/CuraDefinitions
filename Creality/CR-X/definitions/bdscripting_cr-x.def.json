@@ -87,7 +87,8 @@
         "speed_equalize_flow_width_factor": { "value": 100 },
         
         "retraction_amount": { "value": 6 },
-        "retraction_speed": { "value": 50},
+        "retraction_speed": { "value": 70 },
+        "retraction_prime_speed": { "value": 60 },
         "retraction_combing": { "value": "'noskin'" },
         "retraction_combing_max_distance": { "value": 20 },
         
