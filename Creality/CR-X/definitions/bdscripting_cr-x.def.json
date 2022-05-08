@@ -136,6 +136,10 @@
         "infill_pattern": { "value": "'cubicsubdiv' if infill_sparse_density > 50 else 'grid'" },
         "infill_enable_travel_optimization": { "value": true },
         "infill_line_width": { "value": "line_width" },
-        "infill_wall_line_count": { "value": 1 }
+        "infill_wall_line_count": { "value": 1 },
+
+        "coasting_enable": { "value": true },
+        "coasting_volume": { "value": "line_width * machine_nozzle_size * layer_height" },
+        "coasting_min_volume": { "": "line_width * 1.25" }
     }
 }
