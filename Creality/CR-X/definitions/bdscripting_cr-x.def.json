@@ -140,6 +140,20 @@
 
         "coasting_enable": { "value": true },
         "coasting_volume": { "value": "line_width * machine_nozzle_size * layer_height" },
-        "coasting_min_volume": { "": "line_width * 1.25" }
+        "coasting_min_volume": { "": "line_width * 1.25" },
+
+        "bridge_settings_enabled": { "value": true },
+        "bridge_sparse_infill_max_density": { "value": 30 },
+        "bridge_wall_material_flow": { "value": 70 },
+        "bridge_skin_material_flow": { "value": 80 },
+        "bridge_skin_density": { "value": 80 },
+        "bridge_enable_more_layers": { "value": true },
+        "bridge_skin_speed_2": { "value": "bridge_skin_speed * 1.25" },
+        "bridge_skin_density_2": { "value": 80 },
+        "bridge_fan_speed_2": { "value": 100 },
+        "bridge_skin_speed_3": { "value": "speed_topbottom" },
+        "bridge_skin_material_flow_3": { "value": 110 },
+        "bridge_skin_density_3": { "value": 95 },
+        "bridge_fan_speed_3": { "value": 50 }
     }
 }
