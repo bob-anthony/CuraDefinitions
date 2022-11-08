@@ -136,7 +136,7 @@
         
         "infill_pattern": { "value": "'cubicsubdiv' if infill_sparse_density > 50 else 'grid'" },
         "infill_enable_travel_optimization": { "value": true },
-        "infill_line_width": { "value": "line_width" },
+        "infill_line_width": { "value": "line_width * 0.8" },
         "infill_wall_line_count": { "value": 1 },
 
         "coasting_enable": { "value": true },
