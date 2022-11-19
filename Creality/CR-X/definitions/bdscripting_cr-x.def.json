@@ -119,7 +119,7 @@
         "roofing_layer_count": { "value": 2 },
         "roofing_material_flow": { "value": 98 },
         "speed_roofing": { "value": "round(speed_print * 0.5)" },
-        "roofing_line_width": { "value": "skin_line_width * 0.5" },
+        "roofing_line_width": { "value": "skin_line_width * 0.8" },
         "roofing_pattern": { "value": "'lines'" },
         "roofing_monotonic": { "value": true },
         
