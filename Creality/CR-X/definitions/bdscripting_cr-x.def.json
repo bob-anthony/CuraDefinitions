@@ -28,7 +28,7 @@
     {
         "machine_name": { "default_value": "CRX" },
         "machine_show_variants": { "value": true },
-        "machine_start_gcode": { "default_value": "; Beginning of Start G-code\n; End of Start G-code" },
+        "machine_start_gcode": { "default_value": "; Beginning of Start G-code\nG28 O ; Home all untrusted axes\n; End of Start G-code" },
         "machine_end_gcode": { "default_value": "; Beginning of End G-code\nM220 S100 ; Reset feedrate percentage\nM221 S100 ; Reset flow percentage\nG91 ; Set coordinates to relative\nG0 F3000 Z5 ; Move Z axis up 5 mm\nM83 ; Set extrusion to relative\nG1 F3000 E-94 ; Unload filament to -100 mm (-6 retraction + -94 = 100)\nG90 ; Set coordinates to absolute\nG0 X0 Y{machine_depth} F1000 ; Home the x axis and move the bed to the front\nM84 ; Disable stepper motors (optional)\nM117 Print Complete\n; End of End G-code" },
         
         "material_diameter": { "value": 1.75 },
