@@ -50,14 +50,14 @@
         
         "acceleration_enabled": { "value": true },
 
-        "machine_max_acceleration_x": { "value": 1500 },
-        "machine_max_acceleration_y": { "value": 1000 },
+        "machine_max_acceleration_x": { "value": 500 },
+        "machine_max_acceleration_y": { "value": 500 },
         "machine_max_acceleration_z": { "value": 100 },
         "machine_max_acceleration_e": { "value": 5000 },
         
-        "machine_acceleration": { "value": 650 },
+        "machine_acceleration": { "value": 500 },
         "acceleration_print": { "value": "machine_acceleration" },
-        "acceleration_travel": { "value": 1000 },
+        "acceleration_travel": { "value": 500 },
 
         "jerk_enabled": { "value": true },
         
