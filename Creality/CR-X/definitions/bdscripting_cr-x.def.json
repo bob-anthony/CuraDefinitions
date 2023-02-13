@@ -77,7 +77,7 @@
         "wall_line_width": { "value": "line_width * 0.8" },
         
         "speed_print": { "value": 50 },
-        "speed_infill": { "value": "round(speed_print * 0.75)" },
+        "speed_infill": { "value": "speed_print" },
         "speed_wall": { "value": "speed_print" },
         "speed_wall_0": { "value": "round(speed_print * 0.75)" },
         "speed_wall_x": { "value": "speed_wall" },
