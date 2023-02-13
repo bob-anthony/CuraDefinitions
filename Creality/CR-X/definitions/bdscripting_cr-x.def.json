@@ -36,7 +36,7 @@
         "machine_extruder_count": { "value": 2 },
         "machine_extruders_share_heater": { "value": true },
         "machine_extruders_share_nozzle": { "value": true },
-        "machine_extruders_shared_nozzle_initial_retraction": { "value": 100 },
+        "machine_extruders_shared_nozzle_initial_retraction": { "value": 0 },
         
         "machine_width": { "value": 300 },
         "machine_depth": { "value": 300 },
