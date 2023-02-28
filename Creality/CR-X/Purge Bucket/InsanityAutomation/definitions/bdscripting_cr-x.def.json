@@ -107,7 +107,7 @@
         "z_seam_type": { "value": "'sharpest_corner'" },
         "z_seam_corner": { "value": "'z_seam_corner_weighted'" },
         
-        "switch_extruder_retraction_amount": { "value": 0 },
+        "switch_extruder_retraction_amount": { "value": 100 },
         "switch_extruder_retraction_speeds": { "value": 20 },
 
         "relative_extrusion": { "value": true },
