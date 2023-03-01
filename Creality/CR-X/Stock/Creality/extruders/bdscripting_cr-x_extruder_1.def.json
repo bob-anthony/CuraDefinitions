@@ -20,7 +20,7 @@
             "default_value": ""
         },
         "machine_extruder_end_code": {
-            "default_value": ""
+            "default_value": "; Beginning of Right Extruder End G-code\nM211 S0       ; Disable software endstops\nM83           ; Relative extrusion\nG90           ; Absolute positioning\nG1 F3600 E-6  ; Retract\nG0 F6000 X315 ; Move to purge bucket\nG1 F1500 E-94 ; Unload filament\n\nT0            ; Enable left extruder\nG1 F3600 E100 ; Load filament\nG1 F180 E50   ; Purge\nG1 F3600 E-6  ; Retract\nG4 S2         ; Wait\nG0 F6000 X300 ; Wipe\nG0 X315       ; Wipe\nG0 X300       ; Wipe\nG1 F1800 E6   ; Unretract\nM211 S1       ; Enable software endstops\n; End of Right Extruder End G-code"
         }
     }
 }
