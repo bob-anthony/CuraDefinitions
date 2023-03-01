@@ -1,0 +1,26 @@
+{
+    "version": 2,
+    "name": "Left Extruder",
+    "inherits": "fdmextruder",
+    "metadata": {
+        "machine": "bdscripting_cr-x",
+        "position": "0"
+    },
+
+    "overrides": {
+        "extruder_nr": {
+            "default_value": 0,
+            "maximum_value": "1"
+        },
+        "machine_nozzle_offset_x": { "default_value": 0.0 },
+        "machine_nozzle_offset_y": { "default_value": 0.0 },
+        "material_diameter": { "default_value": 1.75 },
+        "machine_nozzle_size": { "default_value": 0.4 },
+        "machine_extruder_start_code": {
+            "default_value": ""
+        },
+        "machine_extruder_end_code": {
+            "default_value": "; Beginning of Left Extruder End G-code\nM211 S0       ; Disable software endstops\nM83           ; Relative extrusion\nG90           ; Absolute positioning\nG1 F3600 E-6  ; Retract\nG0 F6000 X315 ; Move to purge bucket\nG1 F1500 E-94 ; Unload filament\n\nT1            ; Enable right extruder\nG1 F3600 E100 ; Load filament\nG1 F180 E50   ; Purge\nG1 F3600 E-6  ; Retract\nG4 S2         ; Wait\nG0 F6000 X300 ; Wipe\nG0 X315       ; Wipe\nG0 X300       ; Wipe\nG1 F1800 E6   ; Unretract\nM211 S1       ; Enable software endstops\n; End of Left Extruder End G-code"
+        }
+    }
+}
